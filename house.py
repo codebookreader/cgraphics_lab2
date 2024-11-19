@@ -62,3 +62,32 @@ draw_polygon(
     fill_color=(0.2, 0.2, 0.2),  # Even darker gray
     stroke_color=(0, 0, 0)
 )
+# Windows (on the front face)
+for i in range(2):  # Two windows vertically
+    context.rectangle(160 + i * 70, 400, 40, 50)  # x, y, width, height
+    context.set_source_rgb(0.5, 0.7, 1)  # Light blue glass
+    context.fill_preserve()
+    context.set_source_rgb(0, 0, 0)
+    context.stroke()
+
+# Two new windows directly below the existing ones
+for i in range(2):  # Two windows horizontally
+    context.rectangle(160 + i * 70, 490, 40, 50)  # x, y, width, height
+    context.set_source_rgb(0.5, 0.7, 1)  # Light blue glass
+    context.fill_preserve()
+    context.set_source_rgb(0, 0, 0)  # Black outline
+    context.stroke()
+
+# Windows (on the side face)
+for i in range(2):  # Two windows stacked vertically
+    draw_polygon(
+        context,
+        [
+            (320, 410 + i * 80),  # Top-left
+            (360, 400 + i * 80),  # Top-right
+            (360, 440 + i * 80),  # Bottom-right
+            (320, 450 + i * 80),  # Bottom-left
+        ],
+        fill_color=(0.5, 0.7, 1),  # Light blue glass
+        stroke_color=(0, 0, 0)
+    )
