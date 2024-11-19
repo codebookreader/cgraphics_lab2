@@ -91,3 +91,28 @@ for i in range(2):  # Two windows stacked vertically
         fill_color=(0.5, 0.7, 1),  # Light blue glass
         stroke_color=(0, 0, 0)
     )
+
+# Door (on the side face)
+draw_polygon(
+    context,
+    [
+        (380, 460),  # Top-left corner of the door
+        (420, 450),  # Top-right corner of the door
+        (420, 520),  # Bottom-right corner of the door
+        (380, 530),  # Bottom-left corner of the door
+    ],
+    fill_color=(0.2, 0.2, 0.5),  # Dark blue
+    stroke_color=(0, 0, 0)       # Black outline
+)
+
+# Chimney (on the roof)
+draw_polygon(
+    context,
+    [(375, 230), (400, 220), (400, 300), (375, 310)],
+    fill_color=(0.8, 0.8, 0.8),  # Same as the house
+    stroke_color=(0, 0, 0)
+)
+
+# Save the drawing
+surface.write_to_png("3d_house.png")
+print("3D house saved as '3d_house.png'")
